@@ -24,7 +24,7 @@ type configOptions struct {
 	isMultiStatement string
 }
 
-func NewMysqlDatabase(c config) (*mysqlDatabase, error) {
+func newMysqlDatabase(c config) (*mysqlDatabase, error) {
 	connectionString := fmt.Sprintf("%s:%s@%s/%s?multiStatements=%s", c.username, c.password, c.address, c.dbName, c.options.isMultiStatement)
 	client, err := sql.Open("mysql", connectionString)
 	if err != nil {
@@ -33,12 +33,12 @@ func NewMysqlDatabase(c config) (*mysqlDatabase, error) {
 	return &mysqlDatabase{client: client, cfg: c}, err
 }
 
-func (db *mysqlDatabase) IsInitialised() bool {
+func (db *mysqlDatabase) isInitialised() bool {
 	_, err := db.client.Query(fmt.Sprintf("SELECT 1 FROM %s LIMIT 1", db.cfg.tableName))
 	return err == nil || err == sql.ErrNoRows
 }
 
-func (db *mysqlDatabase) Initialise() error {
+func (db *mysqlDatabase) initialise() error {
 	_, err := db.client.Exec(fmt.Sprintf(`CREATE TABLE %s
 		(
     		id bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'migration id',
@@ -57,8 +57,8 @@ func (db *mysqlDatabase) GetExtension() string {
 }
 
 func (db *mysqlDatabase) GetStatus() (*dbshiftcore.Status, error) {
-	if !db.IsInitialised() {
-		if err := db.Initialise(); err != nil {
+	if !db.isInitialised() {
+		if err := db.initialise(); err != nil {
 			return nil, err
 		}
 	}
@@ -74,8 +74,8 @@ func (db *mysqlDatabase) GetStatus() (*dbshiftcore.Status, error) {
 }
 
 func (db *mysqlDatabase) SetStatus(m dbshiftcore.Migration, executionTimeInSeconds float64) error {
-	if !db.IsInitialised() {
-		if err := db.Initialise(); err != nil {
+	if !db.isInitialised() {
+		if err := db.initialise(); err != nil {
 			return err
 		}
 	}

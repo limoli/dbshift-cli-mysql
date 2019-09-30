@@ -27,7 +27,7 @@ func main() {
 		}
 	}
 
-	db, err := NewMysqlDatabase(*cfg)
+	db, err := newMysqlDatabase(*cfg)
 	if err != nil {
 		dbshiftcore.PrintFailure(err.Error())
 		os.Exit(150)
