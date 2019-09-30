@@ -15,8 +15,8 @@ github.com/flynn-archive/go-shlex v0.0.0-20150515145356-3f9db97f8568/go.mod h1:r
 github.com/go-sql-driver/mysql v1.4.1 h1:g24URVg0OFbNUTx9qqY1IRZ9D9z3iPyi5zKhQZpNwpA=
 github.com/go-sql-driver/mysql v1.4.1/go.mod h1:zAC/RDZ24gD3HViQzih4MyKcchzm+sOG5ZlKdlhCg5w=
 github.com/golang/protobuf v1.3.1/go.mod h1:6lQm79b+lXiMfvg/cZm0SGofjICqVBUtrP5yJMmIC1U=
-github.com/limoli/dbshift-core v0.0.0-20190930141811-e32b7bcbf3b9 h1:q6JOEXsgSO/80DaxB+zNm47C361dJakvKDuIqrahgs0=
-github.com/limoli/dbshift-core v0.0.0-20190930141811-e32b7bcbf3b9/go.mod h1:hydyIn5lrHDbiesRUhggElnclTqfeZjk4yjSCTqzX4k=
+github.com/limoli/dbshift-core v0.0.0-20190930144737-ad6750e5030b h1:Tkv5gjXK78ovEe6sXdgUyS6g3yFHD4DLoWY9j35LVX8=
+github.com/limoli/dbshift-core v0.0.0-20190930144737-ad6750e5030b/go.mod h1:hydyIn5lrHDbiesRUhggElnclTqfeZjk4yjSCTqzX4k=
 github.com/mattn/go-colorable v0.1.2 h1:/bC9yWikZXAL9uJdulbSfyVNIR3n3trXl+v8+1sx8mU=
 github.com/mattn/go-colorable v0.1.2/go.mod h1:U0ppj6V5qS13XJ6of8GYAs25YV2eR4EVcfRqFIhoBtE=
 github.com/mattn/go-isatty v0.0.8/go.mod h1:Iq45c/XA43vh69/j3iqttzPXn0bhXyGjM0Hdxcsrc5s=
