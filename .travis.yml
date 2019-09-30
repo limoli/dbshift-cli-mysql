@@ -20,7 +20,7 @@ before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS db_test;'
 
 install:
-  - go build -o dbshift-mysql main.go
+  - go build -o dbshift-mysql .
   - ./dbshift-mysql status
   - ./dbshift-mysql upgrade
   - ./dbshift-mysql status
