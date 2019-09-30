@@ -1,0 +1,43 @@
+sudo: false
+
+language: go
+go:
+  - 1.13.x
+
+services:
+  - mysql
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=86df1ecd73eca6edc7b7c36537573fcfcfdce7db9dc1b9b1684283f6d75f36d8
+    - DBSHIFT_ABS_FOLDER_MIGRATIONS="${TRAVIS_BUILD_DIR}/example/migrations"
+    - DBSHIFT_CLI_MYSQL_TABLE=dbshift
+    - DBSHIFT_CLI_MYSQL_USERNAME=travis
+    - DBSHIFT_CLI_MYSQL_DATABASE=test_db
+    - DBSHIFT_CLI_MYSQL_OPTION_IS_MULTI_STATEMENT=true
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS db_test;'
+
+install:
+  - go build -o dbshift-mysql main.go
+  - ./dbshift-mysql status
+  - ./dbshift-mysql upgrade
+  - ./dbshift-mysql status
+  - ./dbshift-mysql downgrade
+  - ./dbshift-mysql upgrade 20190926154408
+  - ./dbshift-mysql status
+  - ./dbshift-mysql downgrade 20190926154408
+  - ./dbshift-mysql status
+
+before_script:
+  - go vet ./...
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+
+script:
+  - go test -coverprofile c.out ./...
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

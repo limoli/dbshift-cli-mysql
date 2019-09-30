@@ -47,21 +47,13 @@ func initConfiguration() (*config, error) {
 	const errMsg = "missing or unset %s environment variable"
 
 	username := os.Getenv(envMySqlUsername)
-	if username == "" {
-		return nil, &errorWithCode{110, fmt.Sprintf(errMsg, envMySqlUsername)}
-	}
-
 	password := os.Getenv(envMySqlPassword)
-	if password == "" {
-		return nil, &errorWithCode{111, fmt.Sprintf(errMsg, envMySqlUsername)}
-	}
+	address := os.Getenv(envMySqlAddress)
 
 	databaseName := os.Getenv(envMySqlDatabase)
 	if databaseName == "" {
-		return nil, &errorWithCode{112, fmt.Sprintf(errMsg, envMySqlUsername)}
+		return nil, &errorWithCode{110, fmt.Sprintf(errMsg, envMySqlUsername)}
 	}
-
-	address := os.Getenv(envMySqlAddress)
 
 	optionIsMultiStatement := os.Getenv(envMySqlOptionIsMultiStatement)
 	if optionIsMultiStatement != "" && !(optionIsMultiStatement == "true" || optionIsMultiStatement == "false") {

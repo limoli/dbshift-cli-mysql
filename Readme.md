@@ -7,8 +7,8 @@ You will be able to create migrations, check the current db status, decide to up
 [![GoDoc](https://godoc.org/limoli/dbshift-cli-mysql?status.svg)](https://godoc.org/github.com/limoli/dbshift-cli-mysql)
 [![Build Status](https://travis-ci.org/limoli/dbshift-cli-mysql.svg?branch=master)](https://travis-ci.org/limoli/dbshift-cli-mysql)
 [![Go Report Card](https://goreportcard.com/badge/github.com/limoli/dbshift-cli-mysql)](https://goreportcard.com/report/github.com/limoli/dbshift-cli-mysql)
-[![Maintainability](https://api.codeclimate.com/v1/badges/xxx/maintainability)](https://codeclimate.com/github/limoli/dbshift-cli-mysql/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/xxx/test_coverage)](https://codeclimate.com/github/limoli/dbshift-cli-mysql/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1919bcc93e0e275f6552/maintainability)](https://codeclimate.com/github/limoli/dbshift-cli-mysql/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1919bcc93e0e275f6552/test_coverage)](https://codeclimate.com/github/limoli/dbshift-cli-mysql/test_coverage)
 [![License](http://img.shields.io/badge/license-mit-blue.svg)](https://raw.githubusercontent.com/github.com/limoli/dbshift-cli-mysql/LICENSE)
 
 ## Install
@@ -35,9 +35,7 @@ See [Dbshit Core](https://github.com/limoli/dbshift-core).
 
 | Flag       | Description                                                       |
 | ---        | ---                                                               |
-| `110`      | When username is not provided via environment.                    |
-| `111`      | When password is not provided via environment.                    |
-| `112`      | When database name is not provided via environment.               |
+| `110`      | When database name is not provided via environment.               |
 | `115`      | When the option isMultiStatement is badly set.                    |
 | `130`      | When table-name value is missing (env var is not provided).       |
 | `150`      | When db connection gets an error.                                 |
