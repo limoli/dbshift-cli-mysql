@@ -28,7 +28,7 @@ See [Dbshit Core](https://github.com/limoli/dbshift-core).
 |`DBSHIFT_CLI_MYSQL_USERNAME`                   | Database username                                             | See [mysql drive](https://github.com/go-sql-driver/mysql) |
 |`DBSHIFT_CLI_MYSQL_PASSWORD`                   | Database password                                             | See [mysql drive](https://github.com/go-sql-driver/mysql) |
 |`DBSHIFT_CLI_MYSQL_DATABASE`                   | Database name                                                 | See [mysql drive](https://github.com/go-sql-driver/mysql) |
-|`DBSHIFT_CLI_MYSQL_ADDRESS`                    | Database address                                              | See [mysql drive](https://github.com/go-sql-driver/mysql) |
+|`DBSHIFT_CLI_MYSQL_ADDRESS`                    | Database protocol and address                                 | See [mysql drive](https://github.com/go-sql-driver/mysql) |
 |`DBSHIFT_CLI_MYSQL_OPTION_IS_MULTI_STATEMENT`  | Table used by dbshift to manage migrations logics.            | `true`/`false` See [mysql drive](https://github.com/go-sql-driver/mysql) |
 
 ## Exit codes
