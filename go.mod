@@ -1,4 +1,4 @@
-module dbshift-cli-mysql
+module github.com/limoli/dbshift-cli-mysql
 
 go 1.12
 
